@@ -1,0 +1,97 @@
+$neon-blue: #00f0ff;
+$dark-bg: #000;
+$input-bg: rgba(255, 255, 255, 0.05);
+
+.login-container {
+  min-height: 100vh;
+  background-color: $dark-bg;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  color: $neon-blue;
+}
+
+.stats-panel {
+  flex: 1;
+  min-width: 280px;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 1;
+
+  .stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 240, 255, 0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.08);
+    h5 {
+      margin: 0;
+      color: $neon-blue;
+    }
+    p {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.login-form-panel {
+  flex: 1;
+  min-width: 300px;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-left: 1px solid rgba(0, 240, 255, 0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: -5px 0 10px rgba(0, 240, 255, 0.05);
+  border-radius: 1rem;
+}
+
+.neon-text {
+  color: $neon-blue;
+  text-shadow: 0 0 10px $neon-blue;
+}
+
+.neon-label {
+  color: $neon-blue;
+}
+
+.custom-input {
+  background-color: $input-bg;
+  border: 1px solid $neon-blue;
+  color: $neon-blue;
+
+  &::placeholder {
+    color: lighten($neon-blue, 20%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 8px $neon-blue;
+    border-color: lighten($neon-blue, 15%);
+  }
+}
+
+.btn-neon {
+  background-color: transparent;
+  border: 2px solid $neon-blue;
+  color: $neon-blue;
+  font-weight: bold;
+  text-shadow: 0 0 5px $neon-blue;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $neon-blue;
+    color: $dark-bg;
+    box-shadow: 0 0 20px $neon-blue;
+  }
+}

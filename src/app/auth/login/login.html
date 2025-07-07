@@ -1,0 +1,40 @@
+<div class="login-container d-flex">
+  <!-- Left Side: Mini Stats/Graphs -->
+  <div class="stats-panel">
+    <h2 class="neon-text mb-4">📈 Live Stats</h2>
+
+    <div class="stat-card">
+      <h5>Active Users</h5>
+      <p>1,203</p>
+    </div>
+
+    <div class="stat-card">
+      <h5>Open Issues</h5>
+      <p>56</p>
+    </div>
+
+    <div class="stat-card">
+      <h5>Resolved Today</h5>
+      <p>27</p>
+    </div>
+  </div>
+
+  <!-- Right Side: Login Form -->
+  <div class="login-form-panel">
+    <h2 class="neon-text text-center mb-4">Smart Feedback Login</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label neon-label">Email</label>
+        <input type="email" class="form-control custom-input" formControlName="email" />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label neon-label">Password</label>
+        <input type="password" class="form-control custom-input" formControlName="password" />
+      </div>
+
+      <button class="btn btn-neon w-100 mt-3" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  </div>
+</div>
