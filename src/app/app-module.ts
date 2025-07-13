@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     App,
@@ -13,7 +13,12 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right', // Optional: customize position
+      preventDuplicates: true,
+    })
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
