@@ -13,7 +13,7 @@ export class UserService {
     return this.http.post('http://localhost:3000/api/user/register', data)
   }
 
-  login(data: any) {
-    return this.http.post(this.enviromentDev + 'api/user/login', data)
+  login(data: any): Observable<any> {
+    return this.http.post(`${this.enviromentDev}/api/user/login`, data)
   }
 }

@@ -34,7 +34,7 @@
         <input type="password" class="form-control custom-input" formControlName="password" />
       </div>
 
-      <button class="btn btn-neon w-100 mt-3" [disabled]="loginForm.invalid">Login</button>
+      <button class="btn btn-neon w-100 mt-3" (click)="onSubmit()" [disabled]="loginForm.invalid">Login</button>
       <p>New Here ? Register your Self</p>
       <button class="btn btn-neon w-100 mt-3" (click)="navigateToSignUp()">SignUp</button>
     </form>
