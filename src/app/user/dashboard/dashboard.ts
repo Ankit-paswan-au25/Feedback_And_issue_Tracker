@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,6 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
 })
-export class Dashboard {
+export class Dashboard implements OnInit {
+  constructor(private route: Router) { }
+  ngOnInit(): void {
 
+  }
+  userRouteTo(data: any) {
+    this.route.navigate([`user/${data}`])
+  }
 }

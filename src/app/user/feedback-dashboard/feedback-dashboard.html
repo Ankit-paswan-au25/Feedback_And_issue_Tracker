@@ -1,0 +1,243 @@
+<div class="feedback-container">
+    <!-- Header Section -->
+    <header class="feedback-header">
+        <div class="header-left">
+            <h1>Feedback Management</h1>
+            <div class="breadcrumb">Dashboard > Feedback</div>
+        </div>
+        <div class="header-right">
+            <button class="new-feedback-btn">
+                <i class="icon-add"></i> Request Feedback
+            </button>
+            <div class="user-profile">
+                <span class="username">John Doe</span>
+                <div class="avatar">JD</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="feedback-content">
+        <!-- Filters Section -->
+        <div class="filters-section">
+            <div class="filter-group">
+                <label>Type</label>
+                <select class="filter-select">
+                    <option>All Feedback</option>
+                    <option>Product</option>
+                    <option>Service</option>
+                    <option>Feature Request</option>
+                    <option>Bug Report</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Status</label>
+                <select class="filter-select">
+                    <option>All Statuses</option>
+                    <option>New</option>
+                    <option>In Review</option>
+                    <option>Implemented</option>
+                    <option>Rejected</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Rating</label>
+                <select class="filter-select">
+                    <option>All Ratings</option>
+                    <option>5 Stars</option>
+                    <option>4 Stars</option>
+                    <option>3 Stars</option>
+                    <option>2 Stars</option>
+                    <option>1 Star</option>
+                </select>
+            </div>
+
+            <button class="filter-btn">
+                <i class="icon-filter"></i> Apply Filters
+            </button>
+
+            <div class="search-box">
+                <i class="icon-search"></i>
+                <input type="text" placeholder="Search feedback...">
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-value">48</div>
+                <div class="stat-label">Total Feedback</div>
+                <div class="stat-trend up">+5 this week</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-value">4.2</div>
+                <div class="stat-label">Average Rating</div>
+                <div class="stat-trend up">+0.3 this month</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-value">12</div>
+                <div class="stat-label">New This Week</div>
+                <div class="stat-trend down">-2 from last week</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-value">8</div>
+                <div class="stat-label">Implemented</div>
+                <div class="stat-trend up">+3 this month</div>
+            </div>
+        </div>
+
+        <!-- Feedback Cards -->
+        <div class="feedback-cards-section">
+            <div class="section-header">
+                <h2>Recent Feedback</h2>
+                <div class="view-options">
+                    <button class="view-btn grid-view active">
+                        <i class="icon-grid"></i> Grid
+                    </button>
+                    <button class="view-btn list-view">
+                        <i class="icon-list"></i> List
+                    </button>
+                </div>
+            </div>
+
+            <div class="feedback-grid">
+                <!-- Feedback Card 1 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <div class="feedback-source">From: Mobile App</div>
+                        <div class="feedback-date">2 hours ago</div>
+                    </div>
+                    <div class="feedback-content">
+                        "The new dashboard design is fantastic! Much more intuitive than before."
+                    </div>
+                    <div class="feedback-rating">
+                        <div class="stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                        <span class="rating-value">5/5</span>
+                    </div>
+                    <div class="feedback-meta">
+                        <span class="feedback-type">Feature Request</span>
+                        <span class="feedback-status implemented">Implemented</span>
+                    </div>
+                    <div class="feedback-actions">
+                        <button class="action-btn view">
+                            <i class="icon-view"></i> Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feedback Card 2 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <div class="feedback-source">From: Web Portal</div>
+                        <div class="feedback-date">1 day ago</div>
+                    </div>
+                    <div class="feedback-content">
+                        "The login process takes too many steps. Can we simplify it?"
+                    </div>
+                    <div class="feedback-rating">
+                        <div class="stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <span class="rating-value">3/5</span>
+                    </div>
+                    <div class="feedback-meta">
+                        <span class="feedback-type">Product Feedback</span>
+                        <span class="feedback-status in-review">In Review</span>
+                    </div>
+                    <div class="feedback-actions">
+                        <button class="action-btn view">
+                            <i class="icon-view"></i> Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feedback Card 3 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <div class="feedback-source">From: Customer Survey</div>
+                        <div class="feedback-date">3 days ago</div>
+                    </div>
+                    <div class="feedback-content">
+                        "I'm experiencing crashes when trying to export reports in PDF format."
+                    </div>
+                    <div class="feedback-rating">
+                        <div class="stars">
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <span class="rating-value">1/5</span>
+                    </div>
+                    <div class="feedback-meta">
+                        <span class="feedback-type">Bug Report</span>
+                        <span class="feedback-status new">New</span>
+                    </div>
+                    <div class="feedback-actions">
+                        <button class="action-btn view">
+                            <i class="icon-view"></i> Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feedback Card 4 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <div class="feedback-source">From: Support Ticket</div>
+                        <div class="feedback-date">1 week ago</div>
+                    </div>
+                    <div class="feedback-content">
+                        "Your customer support team was very helpful in resolving my issue quickly."
+                    </div>
+                    <div class="feedback-rating">
+                        <div class="stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <span class="rating-value">4/5</span>
+                    </div>
+                    <div class="feedback-meta">
+                        <span class="feedback-type">Service Feedback</span>
+                        <span class="feedback-status implemented">Implemented</span>
+                    </div>
+                    <div class="feedback-actions">
+                        <button class="action-btn view">
+                            <i class="icon-view"></i> Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn" disabled>
+                    <i class="icon-chevron-left"></i>
+                </button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">
+                    <i class="icon-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

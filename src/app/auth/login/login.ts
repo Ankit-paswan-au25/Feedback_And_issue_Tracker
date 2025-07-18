@@ -26,6 +26,7 @@ export class Login implements OnInit {
       console.log('Login request:', email, password);
       this.userService.login({ email, password }).subscribe((data: any) => {
         console.log("hi")
+        this.route.navigate(['user/dashboard'])
       })
     }
     console.log(this.loginForm.invalid)
