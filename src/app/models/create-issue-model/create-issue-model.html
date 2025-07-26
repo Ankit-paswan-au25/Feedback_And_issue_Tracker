@@ -1,0 +1,98 @@
+<div class="create-issue-modal">
+    <div class="modal-header">
+        <h2>Create New Request</h2>
+        <button class="close-btn" (click)="close()">
+            <i class="icon-close"></i>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <form class="issue-form">
+            <div class="form-group">
+                <label for="issueType">Request Type</label>
+                <select id="issueType" class="form-control" [(ngModel)]="issue.type" name="type" required>
+                    <option value="" disabled selected>Select issue type</option>
+                    <option value="bug">Bug</option>
+                    <option value="feature">Feature Request</option>
+                    <option value="ui">UI/UX Improvement</option>
+                    <option value="security">Security Issue</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group" *ngFor="let use of datars">
+                <label for="issueTitle">Title</label>
+                <input type="text" id="issueTitle" class="form-control" [(ngModel)]="issue.title" name="title"
+                    placeholder="Brief issue description" required>
+            </div>
+
+            <div class="form-group">
+                <label for="issueDescription">Description</label>
+                <textarea id="issueDescription" class="form-control" rows="4" [(ngModel)]="issue.description"
+                    name="description" placeholder="Detailed description of the issue..." required></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="issuePriority">Priority</label>
+                    <select id="issuePriority" class="form-control" [(ngModel)]="issue.priority" name="priority"
+                        required>
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                        <option value="critical">Critical</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="issueDepartment">Assign to Department</label>
+                    <select id="issueDepartment" class="form-control" [(ngModel)]="issue.department" name="department"
+                        required>
+                        <option value="development">Development</option>
+                        <option value="design">Design</option>
+                        <option value="qa">Quality Assurance</option>
+                        <option value="support">Customer Support</option>
+                        <option value="management">Management</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Attachments</label>
+                <div class="file-upload-area" (click)="fileInput.click()" [class.active]="isDraggingOver"
+                    (dragover)="onDragOver($event)" (dragleave)="onDragLeave()" (drop)="onDrop($event)">
+                    <input #fileInput type="file" class="file-input" (change)="onFileSelected($event)" multiple
+                        accept="image/*,.pdf,.doc,.docx">
+
+                    <div class="upload-content">
+                        <i class="icon-upload"></i>
+                        <p>Drag & drop files here or click to browse</p>
+                        <small>Supports: JPG, PNG, PDF, DOC (Max 5MB each)</small>
+                    </div>
+                </div>
+
+                <div class="attachments-preview" *ngIf="issue.attachments && issue.attachments.length > 0">
+                    <div class="attachment-item" *ngFor="let file of issue.attachments; let i = index">
+                        <div class="file-info">
+                            <i class="file-icon" [ngClass]="getFileIcon(file.type)"></i>
+                            <div>
+                                <div class="file-name">{{ file.name }}</div>
+                                <div class="file-size">{{ formatFileSize(file.size) }}</div>
+                            </div>
+                        </div>
+                        <button class="remove-btn" (click)="removeAttachment(i)">
+                            <i class="icon-close"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button class="cancel-btn" (click)="close()">Cancel</button>
+        <button class="submit-btn" (click)="submitIssue()" [disabled]="!isFormValid()">
+            <i class="icon-submit"></i> Create Issue
+        </button>
+    </div>
+</div>

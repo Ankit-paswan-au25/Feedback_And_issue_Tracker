@@ -1,0 +1,103 @@
+/* Color Variables */
+$bg-dark: #121212;
+$primary: #00d8ff; // Neon skyblue
+$secondary: #00a8cc;
+$text-primary: #ffffff;
+$text-secondary: #b0b0b0;
+$card-bg: #1e1e1e;
+$border-radius: 8px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+$success: #2ed573;
+$warning: #ffa502;
+$error: #ff4757;
+
+/* Mixins */
+@mixin neon-border {
+    border: 1px solid $primary;
+    box-shadow: 0 0 10px rgba(0, 216, 255, 0.5);
+}
+
+@mixin card-style {
+    background-color: $card-bg;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    @include neon-border;
+}
+
+.side-menu {
+    width: 250px;
+    background-color: lighten($bg-dark, 3%);
+    padding: 1.5rem 0;
+    @include neon-border;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    display: flex;
+    flex-direction: column;
+
+    .main-menu,
+    .sub-menu {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                padding: 0.75rem 1.5rem;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                transition: all 0.3s ease;
+                position: relative;
+
+                i {
+                    width: 24px;
+                    text-align: center;
+                    font-size: 1.1rem;
+                    flex-shrink: 0;
+                }
+
+                span {
+                    opacity: 1;
+                    transition: opacity 0.3s ease;
+                }
+
+                &:hover {
+                    background-color: rgba($primary, 0.1);
+                    color: $primary;
+                }
+
+                &.active {
+                    background-color: rgba($primary, 0.2);
+                    color: $primary;
+                    border-left: 3px solid $primary;
+                }
+            }
+        }
+    }
+
+    .sub-menu {
+        margin-top: auto;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba($primary, 0.2);
+
+        h3 {
+            padding: 0 1.5rem 0.75rem;
+            color: $text-secondary;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+
+    /* Remove mobile text hiding */
+    @media (max-width: 768px) {
+        width: 250px;
+
+        li span {
+            opacity: 1 !important;
+            position: static !important;
+        }
+    }
+}

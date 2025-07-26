@@ -1,0 +1,50 @@
+<!-- Side Menu - Updated for Always Visible Text -->
+<aside class="side-menu">
+    <nav class="main-menu">
+        <ul>
+            <li class="active">
+                <i class="icon-dashboard"></i>
+                <span>Dashboard</span>
+            </li>
+            <li (click)="userRouteTo('issueBoard')">
+                <i class="icon-issues"></i>
+                <span>Issues</span>
+            </li>
+            <li (click)="userRouteTo('feedbackBoard')">
+                <i class="icon-feedback"></i>
+                <span>Feedback</span>
+            </li>
+            <li>
+                <i class="icon-analytics"></i>
+                <span>Analytics</span>
+            </li>
+            <li>
+                <i class="icon-settings"></i>
+                <span>Settings</span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Sub Menu -->
+    <nav class="sub-menu">
+        <h3>Quick Actions</h3>
+        <ul>
+            <li>
+                <i class="icon-add"></i>
+                <span>Create New Issue</span>
+            </li>
+            <li>
+                <i class="icon-request"></i>
+                <span>Request Feedback</span>
+            </li>
+            <li>
+                <i class="icon-report"></i>
+                <span>Generate Report</span>
+            </li>
+            <li>
+                <i class="icon-export"></i>
+                <span>Export Data</span>
+            </li>
+        </ul>
+    </nav>
+</aside>

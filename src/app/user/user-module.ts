@@ -7,6 +7,7 @@ import { SubmitTicket } from './submit-ticket/submit-ticket';
 import { MyTickets } from './my-tickets/my-tickets';
 import { IssueDashboard } from './issue-dashboard/issue-dashboard';
 import { FeedbackDashboard } from './feedback-dashboard/feedback-dashboard';
+import { SidebarMenu } from './sidebar-menu/sidebar-menu';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FeedbackDashboard } from './feedback-dashboard/feedback-dashboard';
     SubmitTicket,
     MyTickets,
     IssueDashboard,
-    FeedbackDashboard
+    FeedbackDashboard,
+    SidebarMenu
   ],
   imports: [
     CommonModule,

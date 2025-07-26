@@ -45,11 +45,11 @@
             <nav class="sub-menu">
                 <h3>Quick Actions</h3>
                 <ul>
-                    <li>
+                    <li (click)="createIssue()">
                         <i class="icon-add"></i>
                         <span>Create New Issue</span>
                     </li>
-                    <li>
+                    <li (click)="requestFeedback()">
                         <i class="icon-request"></i>
                         <span>Request Feedback</span>
                     </li>
@@ -181,8 +181,8 @@
                     <div class="rating-bars">
                         <div class="rating-bar excellent">
                             <div class="rating-label">Excellent</div>
-                            <div class="rating-progress" style="width: 45%"></div>
-                            <div class="rating-value">45%</div>
+                            <div class="rating-progress" style="width: 95%"></div>
+                            <div class="rating-value">95%</div>
                         </div>
                         <div class="rating-bar good">
                             <div class="rating-label">Good</div>
