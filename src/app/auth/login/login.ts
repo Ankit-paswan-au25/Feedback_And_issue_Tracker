@@ -26,6 +26,7 @@ export class Login implements OnInit {
       console.log('Login request:', email, password);
       this.userService.login({ email, password }).subscribe((data: any) => {
         console.log("hi")
+        localStorage.setItem('token', data.token)
         this.route.navigate(['user/dashboard'])
       })
     }

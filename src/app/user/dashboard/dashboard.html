@@ -7,7 +7,10 @@
         <div class="header-right">
             <div class="user-profile">
                 <span class="username">Welcome, User</span>
-                <div class="avatar">U</div>
+                <div class="avatar" (click)="logoutShow()">U</div>
+                <ul *ngIf="isLogoutVisible">
+                    <li (click)="logout()">logout</li>
+                </ul>
             </div>
         </div>
     </header>

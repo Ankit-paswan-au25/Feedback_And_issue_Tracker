@@ -13,6 +13,7 @@ export class Dashboard implements OnInit {
   modalRef?: BsModalRef;
   name!: any
   eretest: any = ['t', 'r', 'f',]
+  isLogoutVisible: boolean = false
   constructor(private route: Router, private modalService: BsModalService) { }
   ngOnInit(): void {
 
@@ -44,5 +45,22 @@ export class Dashboard implements OnInit {
 
   userRouteTo(data: any) {
     this.route.navigate([`user/${data}`])
+  }
+
+  logoutShow() {
+    this.isLogoutVisible = !this.isLogoutVisible
+
+  }
+  logout(): void {
+
+    // Clear user data (e.g., JWT, user info)
+    localStorage.removeItem('token');
+    // localStorage.removeItem('user'); // if you store user info
+
+    // Optionally clear session storage
+    sessionStorage.clear();
+
+    // // Redirect to login or home
+    this.route.navigate(['/']);
   }
 }
